@@ -1,0 +1,170 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: grey;
+}
+form {
+  border-radius: 10px;
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 6%,
+    rgba(148, 187, 233, 1) 92%
+  );
+  position: absolute;
+  width: 400px;
+  height: 450px;
+  padding: 50px 50px;
+  z-index: 2;
+}
+.container {
+  /* margin-top: 50px; */
+  border-radius: 10px;
+  background-color: brown;
+  position: relative;
+  width: 410px;
+  height: 460px;
+  margin: 50px auto;
+  padding: 5px 5px;
+  overflow: hidden; /* take note */
+}
+.container::before {
+  content: "";
+  background-color: white;
+  position: absolute;
+  top: -50%; /* take note */
+  left: -50%; /* take note */
+  width: 500px;
+  height: 550px;
+  z-index: 1;
+  transform-origin: bottom right;
+  animation: slide 6s linear infinite;
+}
+@keyframes slide {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.container::after {
+  content: "";
+  background-color: white;
+  position: absolute;
+  top: -50%; /* take note */
+  left: -50%; /* take note */
+  width: 500px;
+  height: 550px;
+  z-index: 1;
+  transform-origin: bottom right;
+  animation: slideafter 6s linear infinite;
+  animation-delay: 3s;
+}
+@keyframes slideafter {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.border-line {
+  position: absolute;
+  top: 0;
+  inset: 0;
+}
+.border-line::before {
+  content: "";
+  background-color: rgb(96, 96, 207);
+  position: absolute;
+  top: -50%; /* take note */
+  left: -50%; /* take note */
+  width: 500px;
+  height: 550px;
+  z-index: 1;
+  transform-origin: bottom right;
+  animation: slide 6s linear infinite;
+  animation-delay: -1.5s;
+}
+.border-line::after {
+  content: "";
+  background-color: rgb(248, 116, 116);
+  position: absolute;
+  top: -50%; /* take note */
+  left: -50%; /* take note */
+  width: 500px;
+  height: 550px;
+  z-index: 1;
+  transform-origin: bottom right;
+  animation: slideafter 6s linear infinite;
+  animation-delay: -4.5s;
+}
+h1 {
+  text-align: center;
+  letter-spacing: 3px;
+}
+
+label {
+  font-weight: 400;
+  position: absolute;
+  font-size: 19px;
+  letter-spacing: 3px;
+  transition: 0.5s ease;
+  pointer-events: none;
+  left: 0;
+  bottom: 30px;
+}
+
+.input-box {
+  position: relative;}
+  
+
+input {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 2px solid black;
+  background-color: transparent;
+  height: 50px;
+  color: black;
+  letter-spacing: 3px;
+  outline: none;
+  font-size: 15px;
+}
+
+input:focus~label,
+input:valid~label {
+  font-size: 15px;
+  top: -10px;
+}
+a {
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+a:hover {
+  color: rgb(248, 116, 116);
+  transition: 0.5s;
+}
+.sign-up {
+  float: right;
+}
+button {
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+  width: 100px;
+  height: 50px;
+  font-size: 20px;
+}
+button:hover {
+  color: papayawhip;
+  transition: 0.5s;
+  background-color: rgb(248, 116, 116);
+}
